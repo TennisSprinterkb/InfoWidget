@@ -59,6 +59,7 @@ function displayImages() {
                     carImage.attr("data-animate", results[i].images.fixed_height.url);
                     carImage.attr("data-state", "still");
                     carImage.addClass("gifs");
+                    $("#car-images").prepend(p);
                     // appending the paragraph and carImage to the gifDIv
                     // gifDiv.append(carImage);
                     // gifDiv.append(p);
