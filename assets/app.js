@@ -1,9 +1,8 @@
 // Intial array of cars
 var cars = ["Mercedes", "NSX", "Bentley", "Impreza"];
-
+console.log(cars)
 // Functions
 // This function is creating buttons for each item in array
-
 function renderButtons() {
     // deletes topic buttons to prior to adding new buttons
     $("#carButtonView").empty();
@@ -19,18 +18,17 @@ function renderButtons() {
         a.text(cars[i]);
         // adding button to HTML
         $("#carButtonView").append(a);
+        console.log(cars)
     }
-    displayImages()
 }
 
 function displayImages() {
     //Event listener for all button elments
     $(".car").on("click", function() {
+
         var car = $(this).attr("data-name");
-
-        // "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dc6zaTOxFJmzC&limit=10";
-
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&api_key=BscRBlJCPl5muTdRsjGPuW62mLV458e4&limit=10";
+
         // Performing the ajax request
         $.ajax({
             url: queryURL,
@@ -38,8 +36,8 @@ function displayImages() {
         }).then(function(response) {
             console.log(displayImages);
             //deleting GIFs prior to adding new GIFs
-            // $("#carButtonView").empty();
-            // storing array
+                                                    // $("#carButtonView").empty();
+            // Storing the array
             var results = response.data;
             // looping through every result
             for (var i = 0; i < results.length; i++) {
@@ -105,14 +103,14 @@ function remakeButtons() {
         // Providing text for a buttons value
         a.text(cars[i]);
         // adding button to HTML
-        $("#carButtonView").append(a);
+        $("#add-car").append(a);
        
     };
         // grabbing text from input box
         var vehicle = $("#car-input").val().trim();
         // the user input from textbox is then added to the topics array
          cars.push(vehicle);
-        console.log(cars);
+        // console.log(cars);
         $("#car-input").val()
         // calling the function to create buttons that display GIFs
         renderButtons();
