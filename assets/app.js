@@ -30,7 +30,7 @@ function displayImages() {
 
         // "http://api.giphy.com/v1/gifs/search?q=" + type + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + car + "&api_key=BscRBlJCPl5muTdRsjGPuW62mLV458e4&limit=10";
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + car + "&api_key=BscRBlJCPl5muTdRsjGPuW62mLV458e4&limit=10";
         // Performing the ajax request
         $.ajax({
             url: queryURL,
