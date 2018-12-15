@@ -123,11 +123,11 @@ function remakeButtons() {
 
 
 //  main process
-// $(document).ready(function() {
+$(document).ready(function() {
     remakeButtons();
     renderButtons();
     displayImages();
-// });
+});
 
 
 
